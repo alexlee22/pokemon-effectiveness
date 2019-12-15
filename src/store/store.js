@@ -19,5 +19,7 @@ export const reducer = (state, action) => {
       return { ...state, primary: action.payload }
     case "setSecondary":
       return { ...state, secondary: action.payload }
+    case "setResetTypes":
+      return { ...state, primary: null, secondary: null }
   }
 };

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Header from './components/Header.js';
-import Results from './components/Results.js';
 import { StateProvider, initialState, reducer } from "./store/store.js";
+import Header from './components/Header.js';
+import Content from './components/Content.js';
 
 //Material UI
 import { createMuiTheme } from '@material-ui/core/styles';
@@ -10,30 +10,29 @@ import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 const theme = createMuiTheme({
   palette: {
       primary: {
-          main: '#000000',
+          main: '#ffffff',
       },
       secondary: {
-          main: '#f44336',
+          main: '#000000',
       },
   },
 });
 
-class App extends Component {
-  render() {
+export default function App() {
     return (
       <StateProvider initialState={initialState} reducer={reducer}>
         <MuiThemeProvider theme={theme}>
           <div className="App">
             <Header />
-            <Results />
+            <Content />
           </div>
         </MuiThemeProvider>
       </StateProvider>
     );
-  } 
+  
 }
 
-export default App;
+
 
 /*
 <header className="App-header">
